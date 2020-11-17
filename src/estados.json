@@ -1,0 +1,18 @@
+[
+    {
+        "Nombre":"El pericaso",
+        "Tiempo": 12,
+        "imagen": "https://scontent.fcuu2-1.fna.fbcdn.net/v/t1.0-9/124689150_392923702051718_6925812200168465179_n.jpg?_nc_cat=1&ccb=2&_nc_sid=825194&_nc_eui2=AeENcE2c0Jgg_Rya0SeCYpS-z3SkgD9cJ0HPdKSAP1wnQShjlWmjyLtQZ5GBSMYQu6agZRHpJqK6GGNlcRwN9qd-&_nc_ohc=xJCwphssmLgAX_dTI3c&_nc_ht=scontent.fcuu2-1.fna&oh=16f8f0b94de1cbe62f8a2862a7ccb2aa&oe=5FD7D5BB"
+
+    },
+    {
+        "Nombre": "Chalinito",
+        "Tiempo": 45,
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2F-ErvsVFx1_1g%2FAAAAAAAAAAI%2FAAAAAAAAAAA%2FntTAD-ek2z4%2Fs900-c-k-no%2Fphoto.jpg&f=1&nofb=1"
+    },
+    {
+        "Nombre": "Trump",
+        "Tiempo": 23,
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffoto.haberler.com%2Fhaber%2F2020%2F11%2F04%2Fpennsylvania-da-ondeyiz-diyen-trump-a-validen-13713344_amp.jpg&f=1&nofb=1"
+    }
+]
