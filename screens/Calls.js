@@ -1,22 +1,48 @@
-
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import {View,Text,ScrollView,FlatList, StyleSheet,Image, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import data from '../src/calls.json';
-export default class Llamadas extends React.Component{
-    render(){
+//import data from '../src/calls.json';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+export default function Llamadas (){
+    const[data, setData] = useState([]);
+    
+    
+    useEffect(() => {
+        AsyncStorage.getItem('usrtelefono')
+        .then((value) => {
+            let d = new FormData();
+            d.append('idusuario', JSON.parse(value).idusuarios);
+            console.log("** MOSTRANDOOOO ***");
+            console.log(JSON.stringify(d));
+            fetch('http://192.168.1.71/loginapp/llamadas.php',
+            {
+                method : 'POST',
+                body : d
+            })
+            .then((response) => response.json())
+            .then((datos) => {
+                console.log('parte 2',datos);
+                if(datos.estado == 1){
+                    setData(datos.datos);
+                }else{
+                    console.log("El usuario no existe");
+                }
+            })
+            .catch((error) => console.log(error));
+        })
+    },[]); 
         const renderItem = ({item})=>(
             
             <View style={styles.estadoContainer} >
                 <View style={styles.imageContainer} >
-                <Image style={styles.image} source={{uri:item.imagen}} />
+                <Image style={styles.image} source={{uri:item.foto}} />
                 </View>
                 <View style={styles.chat}>
                     <Text style={styles.nameContact}>
-                        {item.Nombre}               
+                        {item.nombre}               
                     </Text>
                     <Text style={styles.messegaeContact}>
-                    (2) {`${item.Fecha}`} 
+                    (2) {`${item.fechahora}`} 
                     </Text> 
 
                 </View>
@@ -38,7 +64,7 @@ export default class Llamadas extends React.Component{
         </SafeAreaView> 
         )
         };
-}
+
 const styles = StyleSheet.create(
     {
         estadoContainer:{
